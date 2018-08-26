@@ -11,7 +11,7 @@ TRemote plugin rpi_gpio in the given form will set a specicified GPIO pin to HIG
 
 # Building the plugin
 
-TRemote plugins are based on Go Modules. You need to use [Go v1.11](https://dl.google.com/go/go1.11.linux-armv6l.tar.gz) (direct dl link) to build TRemote plugins. The "go version" command should return "go version go1.11 linux/arm".
+TRemote plugins are based on Go Modules. You need to use [Go v1.11](https://dl.google.com/go/go1.11.linux-armv6l.tar.gz) (direct dl link for linux-armv6l) to build TRemote plugins. The "go version" command should return "go version go1.11 linux/arm".
 
 After cloning the repository enter the following command to build the plugin:
 
@@ -23,7 +23,7 @@ This will create the "rpi_gpio.so" binary. Copy the binary over to your Tremote 
 
 # Button mapping
 
-This is how you can link a remote control button (here P8) to a plugin (here rpi_gpio) and hand over an argument (here 10). The argument in this case will be used as the GPIO pin number. "gpio" is just a label name:
+The following is an entry for the central "mapping.txt". It links a remote control button (here P8) to a plugin (here rpi_gpio.so) and hand over an argument (here 10). The argument will be used as GPIO pin number. "gpio" is just a label name:
 
 
 ```
