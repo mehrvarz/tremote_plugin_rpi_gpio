@@ -8,7 +8,7 @@ package main
 
 import (
 	"strconv"
-	"github.com/mehrvarz/tremote_plugin"
+	"github.com/mehrvarz/tremote_plugin_base"
 	"github.com/mehrvarz/log"
 	"github.com/stianeikeland/go-rpio"
 )

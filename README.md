@@ -1,4 +1,4 @@
-# TRemote plugin rpi_gpio
+# TRemote Plugin rpi_gpio
 
 TRemote is a service for ARM based Linux computers. It lets you remote control *things* on these kind of machines, specifically over Bluetooth. There is no limit to what you can remote control. You can access a list of predefined actions, you can execute executables and shell scripts, you can issue http request, and you can invoke your own or 3rd party native code plugins.
 
