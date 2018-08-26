@@ -35,10 +35,12 @@ Note that TRemote plugin rpi_gpio makes use of project [go-rpio](https://github.
 
 # Example console log
 
+```
 2018-08-26 19:37:51.09 INFO   mapping button_pressed: P8 (currentlyPressedBitmap=80)
 2018-08-26 19:37:51.09 INFO   rpi_gpio button pressed: set pin 10 high
 2018-08-26 19:37:51.54 INFO   mapping button_released: P8 (currentlyPressedBitmap=00)
 2018-08-26 19:37:51.54 INFO   rpi_gpio button released: clear pin 10 low
+```
 
 
 # Accessing GPIO via /dev/gpiomem memory (without root)
