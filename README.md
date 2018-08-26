@@ -23,7 +23,9 @@ This will create the "rpi_gpio.so" binary. Copy the binary over to your Tremote 
 
 # Button mapping
 
-The following is a one-line entry for the "mapping.txt" file of the TRemote service. This will link a remote control button (here P8) to a plugin (rpi_gpio.so) and hand over an argument (10). The argument in this paricular case will be used as a GPIO pin number. "gpio" is just a label name:
+The following is a one-line entry for the "mapping.txt" file of the TRemote service. 
+
+This entry will link a specific remote control button (here P8) to a plugin (rpi_gpio.so) and hand over an argument (10). The argument in this paricular case will be used as a GPIO pin number. "gpio" is just a label name:
 
 
 ```
