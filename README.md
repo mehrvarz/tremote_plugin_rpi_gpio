@@ -20,7 +20,7 @@ TRemote plugin rpi_gpio makes use of project [go-rpio](https://github.com/stiane
 
 # Compiling
 
-TRemote plugin rpi_gpio makes use of Go Modules. You must use [Go v1.11](https://dl.google.com/go/go1.11.linux-armv6l.tar.gz) to build this project. The "go version" command should return "go version go1.11 linux/arm".
+TRemote plugin rpi_gpio makes use of Go Modules. You must use [Go v1.11](https://dl.google.com/go/go1.11.linux-armv6l.tar.gz) (direct dl link) to build this project. The "go version" command should return "go version go1.11 linux/arm".
 
 After cloning the repository enter the following to build the plugin:
 
