@@ -4,11 +4,11 @@ TRemote is a service for ARM based Linux computers. It lets you remote control *
 
 This repository contains the complete Go source code for a remote control plugin. You can use this plugin as-is. You can also use it as a template to implement extended functionality.
 
-This particular plugin is for Raspberry Pi computers.
+This particular plugin is for **Raspberry Pi computers.**
 
 TRemote plugin rpi_gpio in the given form will set a certain GPIO pin to HIGH when a certain remote control button is pressed. And when this button is released, it will set that GPIO pin back to LOW. Button and pin number can be specified via the central mapping file. 
 
-For example: This is how you can link remote control button P8 to plugin "rpi_gpio" and hand over "10" as an argument. The argument in this case will be used as GPIO pin number. "gpio" here is just a label:
+For example: This is how you can link remote control button P8 to plugin "rpi_gpio" and hand over "10" as argument. The argument in this case will be used as GPIO pin number. "gpio" is just a label:
 
 
 ```
@@ -31,7 +31,7 @@ This will create the "rpi_gpio.so" binary. Copy the binary to your Tremote host 
 
 # Access GPIO via /dev/gpiomem memory (without root)
 
-For this plugin to be able to access the GPIO pins via /dev/gpiomem memory (without root), you may need to set permissions for /dev/gpiomem. First check the current permissions. Enter "ls -l /dev/gpiomem". You should see: "crw-rw---- 1 root gpio". If this is not what you get enter the following:
+This plugin tries to access the Raspberry Pi GPIO pins via /dev/gpiomem memory. In order for this to work without root, you may need to set specific permissions for "/dev/gpiomem". Check the current permissions first. To do so enter "ls -l /dev/gpiomem". You should see: "crw-rw---- 1 root gpio". If this is not what you get, enter the following:
 
 ```
 sudo chown root.gpio /dev/gpiomem
