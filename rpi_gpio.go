@@ -59,7 +59,7 @@ func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, rcs*
 		log1.Infof("%s button pressed: set pin %d high",pluginname,pinnumber)
 		pin.High()
 	} else {
-		log1.Infof("%s button pressed: clear pin %d low",pluginname,pinnumber)
+		log1.Infof("%s button released: clear pin %d low",pluginname,pinnumber)
 		pin.Low()
 	}
 

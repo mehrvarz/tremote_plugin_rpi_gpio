@@ -33,6 +33,14 @@ P8, gpio, rpi_gpio|10
 Note that TRemote plugin rpi_gpio makes use of project [go-rpio](https://github.com/stianeikeland/go-rpio). This package will be automatically fetched.
 
 
+# Example console log
+
+2018-08-26 19:37:51.09 INFO   mapping button_pressed: P8 (currentlyPressedBitmap=80)
+2018-08-26 19:37:51.09 INFO   rpi_gpio button pressed: set pin 10 high
+2018-08-26 19:37:51.54 INFO   mapping button_released: P8 (currentlyPressedBitmap=00)
+2018-08-26 19:37:51.54 INFO   rpi_gpio button released: clear pin 10 low
+
+
 # Accessing GPIO via /dev/gpiomem memory (without root)
 
 This plugin tries to access the Raspberry Pi GPIO pins via /dev/gpiomem memory. In order for this to work without root, you may need to set specific permissions for "/dev/gpiomem". Check the current permissions first. To do so enter "ls -l /dev/gpiomem". You should see: "crw-rw---- 1 root gpio". If this is not what you get, enter the following:
@@ -41,4 +49,7 @@ This plugin tries to access the Raspberry Pi GPIO pins via /dev/gpiomem memory. 
 sudo chown root.gpio /dev/gpiomem
 sudo chmod g+rw /dev/gpiomem
 ```
+
+
+
 
