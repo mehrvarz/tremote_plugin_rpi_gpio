@@ -22,12 +22,12 @@ TRemote plugin rpi_gpio makes use of project [go-rpio](https://github.com/stiane
 
 TRemote plugin rpi_gpio makes use of Go Modules. You must use [Go v1.11](https://dl.google.com/go/go1.11.linux-armv6l.tar.gz) (direct dl link) to build this project. The "go version" command should return "go version go1.11 linux/arm".
 
-After cloning the repository enter the following to build the plugin:
+After cloning the repository enter the following command to build this plugin:
 
 ```
 CGO_ENABLED=1 go build -buildmode=plugin
 ```
-This will create the "rpi_gpio.so" binary. Copy the binary to your Tremote host folder and add one entry like the one shown above to your mapping.txt. Restart TRemote service and you can execute the new plugin via your remote control.
+This will create the required "rpi_gpio.so" binary. Copy the binary over to your Tremote Host folder, add a mapping entry like the one shown above to your mapping.txt file and restart TRemote service. You can now execute your plugin via a remote control.
 
 # Access GPIO via /dev/gpiomem memory (without root)
 
