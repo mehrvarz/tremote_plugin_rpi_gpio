@@ -16,7 +16,7 @@ TRemote plugins are based on Go Modules. You need to use [Go v1.11](https://dl.g
 After cloning the repository enter the following command to build the plugin:
 
 ```
-CGO_ENABLED=1 go build -buildmode=plugin
+CGO_ENABLED=1 go build -buildmode=plugin rpi_gpio.go
 ```
 This will create the "rpi_gpio.so" binary. Copy the binary over to your Tremote Host folder, add a mapping entry like the one shown below to your mapping.txt file and restart TRemote service. You can now invoke your plugin functionality from a Bluetooh remote control.
 
