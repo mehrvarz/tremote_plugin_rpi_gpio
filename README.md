@@ -11,7 +11,7 @@ TRemote plugin rpi_gpio will set a specicified GPIO pin to HIGH when a certain r
 
 # Building the plugin
 
-TRemote plugins are based on Go Modules. You need to use [Go v1.11](https://dl.google.com/go/go1.11.linux-armv6l.tar.gz) (direct dl link for linux-armv6l) to build TRemote plugins. The "go version" command should return "go version go1.11 linux/arm".
+TRemote plugins are based on Go Modules. You need to use [Go v1.11](https://dl.google.com/go/go1.11.linux-armv6l.tar.gz) (direct dl link for linux-armv6l) to build this plugin. Before you start make sure your "go version" command returns "go version go1.11 linux/arm".
 
 After cloning the repository enter the following command to build the plugin:
 
@@ -34,7 +34,7 @@ This entry will link a specific remote control button (here P8) to a plugin (rpi
 P8, gpio, rpi_gpio|10
 ```
 
-Note that the plugin knows nothing about remote controls, about Bluetooth or how a button event is delivered to it. It only cares about the implementation of a particular functionality. The mapping file bindes the two sides together.
+Note that a plugin does not know anything about remote controls, about Bluetooth or how a button event is delivered to it. It only cares about the implementation of the response action. The mapping file bindes the two sides together.
 
 
 # Example console log
