@@ -34,7 +34,7 @@ This entry will link a specific remote control button (here P8) to a plugin (rpi
 P8, gpio, rpi_gpio|10
 ```
 
-It is important to understand that plugins know nothing about remote controls, about Bluetooth or how a button event is delivered to them. They only care about the execution of a particular action. The mapping file bindes the two sides together.
+Note that the plugin knows nothing about remote controls, about Bluetooth or how a button event is delivered to it. It only cares about the implementation of a particular functionality. The mapping file bindes the two sides together.
 
 
 # Example console log
