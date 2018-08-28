@@ -8,6 +8,7 @@ package main
 
 import (
 	"strconv"
+	"sync"
 	"github.com/mehrvarz/tremote_plugin"
 	"github.com/mehrvarz/log"
 	"github.com/stianeikeland/go-rpio"
@@ -23,7 +24,7 @@ var (
 	rpioOpen            = false
 )
 
-func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, rcs* tremote_plugin.RemoteControlSpec, ph tremote_plugin.PluginHelper) error {
+func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, rcs* tremote_plugin.RemoteControlSpec, ph tremote_plugin.PluginHelper, wg *sync.WaitGroup) error {
 	log1 = log
 
 	if instanceNumber==0 {
@@ -46,9 +47,10 @@ func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, rcs*
 	
 	if !rpioOpen {
 		if err := rpio.Open(); err != nil {
-			log1.Warningf("%s rpio.Open() failed err=",pluginname,err.Error())
+			log1.Warningf("%s rpio.Open() failed err=%s",pluginname,err.Error())
 			return err
 		}
+		//Because this plugin will stay in memory, we let rpio open for the next call
 		//defer rpio.Close()
 		rpioOpen = true
        	log1.Infof("%s rpio opened; use pin %d for output",pluginname,pinnumber)
