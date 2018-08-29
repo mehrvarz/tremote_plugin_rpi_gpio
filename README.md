@@ -8,7 +8,7 @@ This particular plugin is for **Raspberry Pi computers.**
 
 TRemote plugin rpi_gpio will set a specicified GPIO pin to HIGH when a certain remote control button is pressed. When the button is released again, the GPIO pin will be set back to LOW. The button id and the pin number are specified via service mapping. See **Button mapping** below.
 
-Note that this plugin makes use of project [go-rpio](https://github.com/stianeikeland/go-rpio). This package will be automatically fetched by "go build".
+This plugin makes use of project [go-rpio](https://github.com/stianeikeland/go-rpio). This package will be automatically fetched by "go build".
 
 
 # Building the plugin
