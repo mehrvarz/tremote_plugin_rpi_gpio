@@ -20,6 +20,8 @@ CGO_ENABLED=1 go build -buildmode=plugin rpi_gpio.go
 ```
 This will create the "rpi_gpio.so" binary. Copy the binary over to your Tremote Host folder, add a mapping entry like the one shown below to your mapping.txt file and restart TRemote service. You can now invoke your plugin functionality from a Bluetooh remote control.
 
+Make sure to take a look at the [TRemote plugin base package](https://github.com/mehrvarz/tremote_plugin)
+
 Note that rpi_gpio plugin makes use of project [go-rpio](https://github.com/stianeikeland/go-rpio). This package will be automatically fetched by "go build".
 
 
