@@ -8,6 +8,8 @@ This particular plugin is for **Raspberry Pi computers.**
 
 TRemote plugin rpi_gpio will set a specicified GPIO pin to HIGH when a certain remote control button is pressed. When the button is released again, the GPIO pin will be set back to LOW. The button id and the pin number are specified via service mapping. See **Button mapping** below.
 
+Note that this plugin makes use of project [go-rpio](https://github.com/stianeikeland/go-rpio). This package will be automatically fetched by "go build".
+
 
 # Building the plugin
 
@@ -20,9 +22,7 @@ CGO_ENABLED=1 go build -buildmode=plugin rpi_gpio.go
 ```
 This will create the "rpi_gpio.so" binary. Copy the binary over to your Tremote Host folder, add a mapping entry like the one shown below to your mapping.txt file and restart TRemote service. You can now invoke your plugin functionality from a Bluetooh remote control.
 
-If you intend to modify this plugin or create a similar one, you need to take a look at the [TRemote plugin base package](https://github.com/mehrvarz/tremote_plugin).
-
-Note that rpi_gpio plugin makes use of project [go-rpio](https://github.com/stianeikeland/go-rpio). This package will be automatically fetched by "go build".
+If you intend to modify this plugin or create a similar one, you should take a look at the [TRemote plugin base package](https://github.com/mehrvarz/tremote_plugin).
 
 
 # Button mapping
