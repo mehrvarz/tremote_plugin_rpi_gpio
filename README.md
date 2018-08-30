@@ -44,9 +44,9 @@ Note that a plugin does not know anything about remote controls, about Bluetooth
 # Example console log
 
 ```
-2018-08-26 19:37:51.09 INFO   mapping button_pressed: P8 (currentlyPressedBitmap=80)
+2018-08-26 19:37:51.09 INFO   mapping button_pressed: P8
 2018-08-26 19:37:51.09 INFO   rpi_gpio button pressed: set pin 10 high
-2018-08-26 19:37:51.54 INFO   mapping button_released: P8 (currentlyPressedBitmap=00)
+2018-08-26 19:37:51.54 INFO   mapping button_released: P8
 2018-08-26 19:37:51.54 INFO   rpi_gpio button released: clear pin 10 low
 ```
 
@@ -60,6 +60,9 @@ sudo chown root.gpio /dev/gpiomem
 sudo chmod g+rw /dev/gpiomem
 ```
 
+This should let you run this plugin without root permissions. You still need to make this permanent with some udev rules. Take a look at this:
+
+https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=9667#p734582
 
 
 
