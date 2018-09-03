@@ -7,6 +7,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"sync"
 	"github.com/mehrvarz/tremote_plugin"
@@ -50,7 +51,7 @@ func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, rcs*
 			log1.Warningf("%s rpio.Open() failed err=%s",pluginname,err.Error())
 			return err
 		}
-		//Because this plugin will stay in memory, we let rpio open for the next call
+		//Because this plugin will stay in memory, we leave rpio open for upcoming tasks
 		//defer rpio.Close()
 		rpioOpen = true
        	log1.Infof("%s rpio opened; use pin %d for output",pluginname,pinnumber)
@@ -58,10 +59,12 @@ func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, rcs*
 	}
 
 	if pressedDuration==0 {
-		log1.Infof("%s button pressed: set pin %d high",pluginname,pinnumber)
+		log1.Infof("%s button pressed: pin %d high",pluginname,pinnumber)
+		ph.PrintInfo(fmt.Sprintf("pin %d high",pinnumber))
 		pin.High()
 	} else {
-		log1.Infof("%s button released: clear pin %d low",pluginname,pinnumber)
+		log1.Infof("%s button released: pin %d low",pluginname,pinnumber)
+		ph.PrintInfo(fmt.Sprintf("pin %d low",pinnumber))
 		pin.Low()
 	}
 
