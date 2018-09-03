@@ -45,9 +45,9 @@ Note that a plugin does not know anything about remote controls, about Bluetooth
 
 ```
 2018-08-26 19:37:51.09 INFO   mapping button_pressed: P8
-2018-08-26 19:37:51.09 INFO   rpi_gpio button pressed: set pin 10 high
+2018-08-26 19:37:51.09 INFO   rpi_gpio button pressed: pin 10 high
 2018-08-26 19:37:51.54 INFO   mapping button_released: P8
-2018-08-26 19:37:51.54 INFO   rpi_gpio button released: clear pin 10 low
+2018-08-26 19:37:51.54 INFO   rpi_gpio button released: pin 10 low
 ```
 
 
