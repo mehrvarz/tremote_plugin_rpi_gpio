@@ -26,8 +26,8 @@ var (
 )
 
 func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, 
-			rcs* tremote_plugin.RemoteControlSpec, ph tremote_plugin.PluginHelper, 
-			wg *sync.WaitGroup) error {
+		rcs* tremote_plugin.RemoteControlSpec, ph tremote_plugin.PluginHelper, 
+		wg *sync.WaitGroup) error {
 	logm = log
 
 	if instanceNumber==0 {
