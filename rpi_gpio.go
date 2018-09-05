@@ -1,9 +1,11 @@
-// rpi_gpio plugin needs proper access to /dev/gpiomem
-// check permissions: ls -l /dev/gpiomem
-// you should see: "crw-rw---- 1 root gpio"
-// if you don't, set the correct permissions:
-// sudo chown root.gpio /dev/gpiomem
-// sudo chmod g+rw /dev/gpiomem
+/*
+rpi_gpio plugin needs proper access to /dev/gpiomem
+check permissions: ls -l /dev/gpiomem
+you should see: "crw-rw---- 1 root gpio"
+if you don't, set the correct permissions:
+sudo chown root.gpio /dev/gpiomem
+sudo chmod g+rw /dev/gpiomem
+*/
 package main
 
 import (
@@ -25,9 +27,8 @@ var (
 	rpioOpen            = false
 )
 
-func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, 
-		rcs* tremote_plugin.RemoteControlSpec, ph tremote_plugin.PluginHelper, 
-		wg *sync.WaitGroup) error {
+func Action(log log.Logger, pid int, longpress bool, pressedDuration int64, rcs* tremote_plugin.RemoteControlSpec, 
+		ph tremote_plugin.PluginHelper, wg *sync.WaitGroup) error {
 	logm = log
 
 	if instanceNumber==0 {
