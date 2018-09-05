@@ -44,9 +44,9 @@ func Action(log log.Logger, pid int, longpress bool, pressedDuration int64,
 	if err != nil {
 		logm.Warningf("%s arg[0]=%s to int failed err=",pluginname,strArray[0],err.Error())
 		return err
-    }
+	}
 
-    pin := rpio.Pin(pinnumber)
+	pin := rpio.Pin(pinnumber)
 	
 	if !rpioOpen {
 		if err := rpio.Open(); err != nil {
@@ -56,7 +56,7 @@ func Action(log log.Logger, pid int, longpress bool, pressedDuration int64,
 		//Because this plugin will stay in memory, we leave rpio open for upcoming tasks
 		//defer rpio.Close()
 		rpioOpen = true
-       	logm.Infof("%s rpio opened; use pin %d for output",pluginname,pinnumber)
+		logm.Infof("%s rpio opened; use pin %d for output",pluginname,pinnumber)
 		pin.Output()
 	}
 
